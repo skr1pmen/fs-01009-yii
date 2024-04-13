@@ -19,7 +19,9 @@ class UserController extends Controller
                 $model->login,
                 $model->password,
                 $model->age,
-                $model->username
+                $model->name,
+                $model->surname,
+                $model->patronymic
             );
             return $this->redirect('/user/');
         }

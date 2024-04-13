@@ -10,7 +10,9 @@ class UserForm extends Model
     public $age;
     public $password;
     public $passwordRepeat;
-    public $username;
+    public $name;
+    public $surname;
+    public $patronymic;
 
     public function attributeLabels()
     {
@@ -19,16 +21,18 @@ class UserForm extends Model
             'age' => 'Возраст',
             'password' => 'Пароль',
             'passwordRepeat' => 'Повторённый пароль',
-            'username' => "Ваше имя"
+            'name' => "Ваше имя",
+            'surname' => "Ваша фамилия",
+            'patronymic' => "Ваше отчество"
         ];
     }
 
     public function rules()
     {
         return [
-            [['login', 'age', 'password', 'passwordRepeat', 'username'], 'required'],
+            [['login', 'age', 'password', 'passwordRepeat', 'name', 'surname'], 'required'],
             ['age', 'integer'],
-            ['login', 'string'],
+            [['login', 'patronymic'], 'string'],
             ['passwordRepeat', 'compare', 'compareAttribute' => 'password'],
             ['age', 'validateAge']
         ];

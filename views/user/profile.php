@@ -9,7 +9,9 @@ use yii\widgets\ActiveForm;
 
 <?php $form = ActiveForm::begin() ?>
 <?= $form->field($model, 'login')->textInput() ?>
-<?= $form->field($model, 'username')->textInput() ?>
+<?= $form->field($model, 'name')->textInput() ?>
+<?= $form->field($model, 'surname')->textInput() ?>
+<?= $form->field($model, 'patronymic')->textInput() ?>
 <?= $form->field($model, 'age')->textInput() ?>
 <?= $form->field($model, 'password')->textInput() ?>
 <?= $form->field($model, 'passwordRepeat')->textInput() ?>
